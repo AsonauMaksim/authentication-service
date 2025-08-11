@@ -1,0 +1,20 @@
+# Git
+.git
+.gitignore
+
+# IDE
+.idea
+*.iml
+.vscode
+
+# Build output
+target/
+out/
+bin/
+*.class
+
+# Logs
+*.log
+
+# OS system files
+.DS_Store
