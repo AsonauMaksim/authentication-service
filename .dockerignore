@@ -8,7 +8,6 @@
 .vscode
 
 # Build output
-target/
 out/
 bin/
 *.class
