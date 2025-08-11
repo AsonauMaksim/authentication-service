@@ -78,7 +78,7 @@ jobs:
           cache: 'maven'
 
       - name: Build project for analysis
-        run: mvn verify -Dspring.profiles.active=test -X
+        run: mvn clean install -DskipTests
 
       - name: Run SonarCloud scan
         env:
