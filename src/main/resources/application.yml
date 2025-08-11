@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: authentication-service
+
+  datasource:
+    url: jdbc:postgresql://auth-postgres:5432/auth_db
+    username: postgres
+    password: 12345
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+
+jwt:
+#  secret: U2VjcmV0S2V5Rm9ySldUVGhhdElzVmVyeVNlY3JldDEyMzQ1Ng==
+  secret: ${JWT_SECRET}
+  access-token-expiration-ms: 3600000
+  refresh-token-expiration-ms: 604800000
+
+server:
+  port: 8082
