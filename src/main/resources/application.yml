@@ -21,7 +21,6 @@ spring:
     change-log: classpath:db/changelog/db.changelog-master.xml
 
 jwt:
-#  secret: U2VjcmV0S2V5Rm9ySldUVGhhdElzVmVyeVNlY3JldDEyMzQ1Ng==
   secret: ${JWT_SECRET}
   access-token-expiration-ms: 3600000
   refresh-token-expiration-ms: 604800000
