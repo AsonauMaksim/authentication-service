@@ -6,11 +6,12 @@ import com.internship.authentication_service.entity.UserCredentials;
 import com.internship.authentication_service.exception.InvalidTokenException;
 import com.internship.authentication_service.repository.RefreshTokenRepository;
 import com.internship.authentication_service.service.RefreshTokenService;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 
 import java.time.Instant;
 import java.util.Optional;
