@@ -7,4 +7,5 @@
 
     <include file="db/changelog/create-user-credentials.xml"/>
     <include file="db/changelog/create-refresh-tokens.xml"/>
+    <include file="db/changelog/add-fk-cascade-to-refresh-tokens.xml"/>
 </databaseChangeLog>
