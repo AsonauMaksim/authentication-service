@@ -6,6 +6,7 @@ import com.internship.authentication_service.entity.RefreshToken;
 import com.internship.authentication_service.entity.UserCredentials;
 import com.internship.authentication_service.exception.AlreadyExistsException;
 import com.internship.authentication_service.exception.InvalidTokenException;
+import com.internship.authentication_service.exception.NotFoundException;
 import com.internship.authentication_service.exception.UnauthorizedException;
 import com.internship.authentication_service.repository.UserCredentialsRepository;
 import com.internship.authentication_service.service.AuthService;
@@ -16,6 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -107,5 +109,12 @@ public class AuthServiceImpl implements AuthService {
         log.info("Refresh token invalidated successfully");
 
         return "Refresh token successfully invalidated";
+    }
+
+    @Transactional
+    public void deleteByUsername(String username) {
+        UserCredentials user = repository.findByUsername(username)
+                .orElseThrow(() -> new NotFoundException("User '" + username + "' not found"));
+        repository.delete(user);
     }
 }
