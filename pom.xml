@@ -12,7 +12,7 @@
 
 	<groupId>com.internship</groupId>
 	<artifactId>authentication-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>authentication-service</name>
 	<description>Authentication microservice for login, JWT token issuance and validation.</description>
 
@@ -38,6 +38,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
 		<!-- Liquibase / PostgreSQL -->
